@@ -16,6 +16,8 @@
 #include "cparse.h"
 #include <ctype.h>
 #include "javadoc.h"
+#include <iostream>
+
 
 /* Hash type used for upcalls from C/C++ */
 typedef DOH UpcallData;
@@ -243,6 +245,13 @@ public:
 	   Delete(symname);
 	 }
        }
+     }
+     {
+        String *__debugName = SwigType_namestr(t);
+        std::cout << "*** getProxyName=" << (const char*)DohData(__debugName) << "\n";
+        if (proxyname) {
+          std::cout << " --> proxy=" << (const char*)DohData(proxyname) << "\n";
+        }
      }
      return proxyname;
    }
