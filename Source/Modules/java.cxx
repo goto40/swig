@@ -248,7 +248,8 @@ public:
      }
      {
         String *__debugName = SwigType_namestr(t);
-        std::cout << "*** getProxyName=" << (const char*)DohData(__debugName) << "\n";
+        std::string ___debugName = (const char*)DohData(__debugName);
+        std::cout << "*** getProxyName=" << ___debugName << "\n";
         if (proxyname) {
           std::cout << " --> proxy=" << (const char*)DohData(proxyname) << "\n";
         }
